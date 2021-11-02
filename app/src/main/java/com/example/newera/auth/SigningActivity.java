@@ -1,5 +1,6 @@
 package com.example.newera.auth;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.newera.MainActivity;
 import com.example.newera.databinding.ActivitySigningBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -110,6 +112,11 @@ public class SigningActivity extends AppCompatActivity {
         binding.applyNumberBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String code = binding.numberEd.getText().toString();
+                if (TextUtils.isEmpty(code)){
+                    binding.numberEd.setError("error");
+                    return;
+                }
                 startPhoneNumberVerification(binding.numberEd.getText().toString());
             }
         });
@@ -167,10 +174,16 @@ public class SigningActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
+                            Intent intent = new Intent(SigningActivity.this, MainActivity.class);
+                            startActivity(intent);
+
+                            finish();
 
                             FirebaseUser user = task.getResult().getUser();
+
                             // Update UI
                         } else {
                             // Sign in failed, display a message and update the UI

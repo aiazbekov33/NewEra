@@ -20,7 +20,7 @@
     <EditText
         android:id="@+id/code_ed"
         android:layout_margin="12dp"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:textColor="@android:color/darker_gray"
         android:hint="Смс - код"/>
@@ -28,19 +28,20 @@
     <EditText
     android:id="@+id/number_ed"
     android:layout_margin="12dp"
-    android:layout_width="match_parent"
+    android:layout_width="350dp"
     android:layout_height="wrap_content"
     android:textColor="@android:color/darker_gray"
     android:hint="Номер телефона"/>
     <Button
         android:id="@+id/apply_cod_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Получить код"
         android:layout_gravity="center"/>
+
     <Button
         android:id="@+id/apply_number_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Подтвердить код"
         android:layout_gravity="center"/>

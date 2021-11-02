@@ -68,6 +68,7 @@ public class OnBoardFragment extends Fragment {
                     binding.titleTv.setText("Третий экран");
                     binding.boardImage.setAnimation("analyse.json");
                     binding.startBtn.setVisibility(View.VISIBLE);
+                    binding.skipBtn.setVisibility(View.GONE);
                     binding.startBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -75,6 +76,7 @@ public class OnBoardFragment extends Fragment {
                             sharedPreferences.edit().putBoolean(Constants.IS_SHOW,true).apply();
                             startActivity(new Intent(requireContext(), MainActivity.class));
 //                            requireActivity().finish();
+
 
                             Animation logoMoveAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.baunce_animation);
                             binding.startBtn.startAnimation(logoMoveAnimation);

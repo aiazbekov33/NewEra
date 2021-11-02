@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.newera.MainActivity;
+import com.example.newera.auth.SigningActivity;
 import com.example.newera.databinding.ActivityBoardBinding;
 import com.example.newera.utils.Constants;
 
@@ -30,7 +30,7 @@ public class BoardActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(Constants.IS_SHOW_FILE, MODE_PRIVATE);
         isShow= sharedPreferences.getBoolean(Constants.IS_SHOW,false);
         if (isShow) {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, SigningActivity.class));
         }
     }
 
